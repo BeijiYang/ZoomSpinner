@@ -2814,7 +2814,6 @@ onedit:v=>this._speed=C3.toRadians(v)},{name:prefix+".properties.acceleration.na
 		C3.Plugins.Arr.Acts.Clear,
 		C3.Plugins.Arr.Acts.SetXY,
 		C3.Plugins.System.Acts.SetBoolVar,
-		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.System.Cnds.For,
@@ -2826,9 +2825,9 @@ onedit:v=>this._speed=C3.toRadians(v)},{name:prefix+".properties.acceleration.na
 		C3.Plugins.Text.Exps.Width,
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.Sprite.Exps.Height,
-		C3.Plugins.Sprite.Acts.SetInstanceVar,
-		C3.Plugins.Sprite.Acts.LoadURL,
+		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Arr.Exps.At,
+		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Button.Cnds.OnClicked,
 		C3.Plugins.System.Cnds.CompareVar,
@@ -2983,37 +2982,24 @@ onedit:v=>this._speed=C3.toRadians(v)},{name:prefix+".properties.acceleration.na
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
-		() => 3,
+		() => 2,
 		() => 1,
 		() => 0,
 		() => "Andrii",
-		() => "https://ca.slack-edge.com/T02SPJ37X-U01E53K5ZCZ-40744ddda190-512",
 		() => "Yujie",
-		() => "https://ca.slack-edge.com/T02SPJ37X-U01EG9U00E4-785844eee57d-512",
-		() => 2,
 		() => "Andriy",
-		() => "https://ca.slack-edge.com/T02SPJ37X-U01EG9T5Y48-dbcc0ca4b018-512",
+		() => 3,
 		() => "Kit",
-		() => "https://ca.slack-edge.com/T02SPJ37X-U01E53JBP7B-341b642af2fc-512",
 		() => 4,
 		() => "Vale",
-		() => "https://ca.slack-edge.com/T02SPJ37X-U01DSEFCCAW-b4317deab4ef-512",
 		() => 5,
 		() => "Annette",
-		() => "https://ca.slack-edge.com/T02SPJ37X-U01EG9T663A-6134491fb196-512",
 		() => 6,
 		() => "Mahdi",
-		() => "https://ca.slack-edge.com/T02SPJ37X-U01DSM0HJKV-ac36b86b90ef-512",
 		() => 7,
 		() => "Hamza",
-		() => "https://ca.slack-edge.com/T02SPJ37X-U01M5L1DKS4-gd74b5bd9141-512",
 		() => 8,
 		() => "Balazs",
-		() => "https://ca.slack-edge.com/T02SPJ37X-U01DBNKCG5V-3d43c21b3cc6-512",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (and("There are ", v0.GetValue()) + " online people in the JET Slack channel");
-		},
 		() => "i",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -3040,13 +3026,13 @@ onedit:v=>this._speed=C3.toRadians(v)},{name:prefix+".properties.acceleration.na
 			return () => (n0.ExpObject() + (n1.ExpObject() / 2));
 		},
 		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0();
-		},
-		p => {
 			const n0 = p._GetNode(0);
 			const f1 = p._GetNode(1).GetBoundMethod();
-			return () => n0.ExpObject(f1(), 1);
+			return () => n0.ExpObject((f1() - 1), 0);
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0();
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
